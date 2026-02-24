@@ -90,20 +90,20 @@ function App() {
                 fontWeight: "500",
               }}
             >
-              A
+              R
             </div>
           </div>
 
 
         </header >
 
-        <div className='container-fluid'>
+        <div className=''>
           <div className='row h-100'>
             {/* side Bar */}
 
 
 
-            <div className='col-md-3 sidebar'>
+            <div className='col-md-2 sidebar'>
 
               <button className="btn compose-btn d-flex  gap-3 p-3">
                 <svg
@@ -212,266 +212,448 @@ function App() {
             </div>
 
 
+
+
             {/* main content */}
-            <div className='col-md-9 main-content'>
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+            <div className='col-md-10 main-content'>
+              <div className='email-list box-1'>
+
+                <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
 
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
-
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
-
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom read'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
-              </div>
 
-
-              <div className='email-list'>
-                <div className='email-row d-flex align-items-center border-bottom'>
+                <div className='email-row d-flex align-items-center border-bottom unread'>
                   <Form.Check type="checkbox" className="email-checkbox p-2" />
                   <button variant="link" className='star-btn p-0 btn p-2'>
                     ☆
                   </button>
-                  <span className="sender">Google</span>
+                  <span className="sender">Amazon India</span>
                   <span className="subject flex-grow-1 p-2">
-                    Welcome to Gmail{""}
+                    Your order has been shipped{""}
                     <span className="snippet">
-                      - Get started with your new account
+                      -  Your package is on the way and will arrive by 18 Feb.
                     </span>
                   </span>
-                  <span className='time p-2'>10:30 AM</span>
-
+                  <span className='time p-2'> 8:15 AM</span>
                 </div>
 
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom read'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom read'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom read'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom read'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
+
+                <div className='email-row d-flex align-items-center border-bottom unread'>
+                  <Form.Check type="checkbox" className="email-checkbox p-2" />
+                  <button variant="link" className='star-btn p-0 btn p-2'>
+                    ☆
+                  </button>
+                  <span className="sender">Amazon India</span>
+                  <span className="subject flex-grow-1 p-2">
+                    Your order has been shipped{""}
+                    <span className="snippet">
+                      -  Your package is on the way and will arrive by 18 Feb.
+                    </span>
+                  </span>
+                  <span className='time p-2'> 8:15 AM</span>
+                </div>
               </div>
 
+              <div className='box-2'>
+                <h3>I</h3>
 
+              </div>
 
 
             </div>
