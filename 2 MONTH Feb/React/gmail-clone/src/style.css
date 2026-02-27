@@ -137,9 +137,10 @@
      width: 95%;
  }
 
- .box-2 {
-     width: 5%;
+ .box-2 .header-icon-2 {
+     width: 5% !important;
      background: #F8FAFD;
+     position: fixed
  }
 
 
@@ -178,7 +179,115 @@
      background: #FFFFFF;
  }
 
- /* .email-row:hover {
+ .email-row:hover {
      box-shadow: inset 1px 0 0 rgb(218, 220, 224), inset -1px 0 0 rgb(218, 220, 224), rgba(60, 64, 67, 0.3), 0 1px 3px 1px;
      z-index: 2;
- } */
+ }
+
+ .img-icon {
+     display: circle;
+ }
+
+ .sideslide-items {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .main-navbar .ul {
+
+     list-style-type: none;
+     gap: 10px;
+     padding: 10px 24px 0 20px !important;
+     border-radius: 0 16px 16px 0 !important;
+     font-size: 16px;
+     color: #202124 !important;
+     background: #FFFFFF;
+ }
+
+ .main-navbar .ul {
+     display: flex;
+     flex-direction: row;
+     border-radius: 50px;
+     margin-top: 4%;
+ }
+
+ .main-header {}
+
+ .main-contenier {
+     margin-top: 10px;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+
+ }
+
+ .main-nav-bar {
+     flex-direction: row;
+     margin-top: 10%;
+ }
+
+ .main-header-section {
+     display: flex;
+     text-align: center;
+     padding: 8px 12px;
+     height: 50px;
+  
+     position: fixed;
+     z-index: 1;
+     width: 100%;
+     border: 0px solid white;
+     border-radius: 50px;
+
+     max-width: 80%;
+     border: 0px solid white;
+     border-radius: 5px;
+     box-shadow: 0 1px 3px 0 rgba(60, 64, 67, .3), 0 4px 8px 3px rgba(60, 64, 67, .15) !important;
+
+
+
+ }
+
+ .main-nav-bar-section {
+     margin-top: 8%;
+     margin-bottom: 4%;
+     margin-left: 4%;
+     margin-right: 4%;
+
+ }
+
+ .main-side-header {
+     margin-left: 60%;
+ }
+
+ 
+ 
+
+ .header-icon-2 {
+     width: 25px !important;
+     height: 25px;
+     cursor: pointer;
+     position: fixed;
+     position: relative;
+
+
+ }
+
+ .box-2-sideslide {
+     width: 56px;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-top: 15px;
+     border-left: 1px solid #e0e0e0f1;
+     margin-bottom: 5%;
+     /* position:absolute;
+     position: fixed; */
+ }
+
+
+ .box-2-sideslide-botoom {
+    margin-top: 50%;
+
+ }
