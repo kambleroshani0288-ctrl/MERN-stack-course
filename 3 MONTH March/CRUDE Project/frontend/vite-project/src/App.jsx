@@ -4,67 +4,124 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
+import { ToastContainer, toast } from 'react-toastify';
+
+
 import "./style.css"
+import { useState } from 'react';
+
 function App() {
+
+  const [itemName, setItemName] = useState() //1 Use State Hook
+
+  console.log(itemName, "Enter Item Name")
+
+  const handleOnChange = (event) => {
+
+    setItemName(event.target.value)
+
+
+    console.log("Typing on Input field")
+  };
+
+  function SubmitForm(e) {
+    e.preventDefault();
+    console.log("form submitted");
+
+    toast.success("Form submitted", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
+  }
+
 
   return (
     <>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <h2 className='text-danger text-center my-5'>CRUDE - MERN STack Project start</h2>
       <div className='container'>
         <div className='row'>
-
-
           <div className='col-md-6'>
-            <h3 className='border text-center'>Add Items</h3>
+            <h3 className='border text-center'>Create Items</h3>
+
             <Form className='my-5'>
               <Row className="mb-3">
+
                 <Form.Group as={Col} controlId="formGridEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Label>Item Name</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Item Name" onChange={() => handleOnChange(event)}
+                  />
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
+
+                <Form.Group as={Col} controlId="formGridZip">
+                  <Form.Label>Discription</Form.Label>
+                  <Form.Control type='number' placeholder=" Enter Description" />
                 </Form.Group>
+
               </Row>
 
-              <Form.Group className="mb-3" controlId="formGridAddress1">
-                <Form.Label>Address</Form.Label>
-                <Form.Control placeholder="1234 Main St" />
-              </Form.Group>
+              <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Label>Purchase Price</Form.Label>
+                  <Form.Control type="Number" placeholder="Enter Purchase Price" />
+                </Form.Group>
 
-
+                <Form.Group as={Col} controlId="formGridAddress1">
+                  <Form.Label>Selling  Prices</Form.Label>
+                  <Form.Control type='number' placeholder=" Selling Price" />
+                </Form.Group>
+              </Row>
 
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridCity">
-                  <Form.Label>City</Form.Label>
-                  <Form.Control />
+                  <Form.Label>Quantity</Form.Label>
+                  <Form.Control type='number' placeholder=" Enter Quantity" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridState">
-                  <Form.Label>State</Form.Label>
-                  <Form.Select defaultValue="Choose...">
-                    <option>Choose...</option>
-                    <option>...</option>
+                  <Form.Label>Unity</Form.Label>
+                  <Form.Select defaultValue="Choose Unit">
+                    <option>Choose Unity</option>
+                    <option>Pice</option>
+                    <option>Box</option>
+                    <option>Kg</option>
+                    <option>Gram</option>
+                    <option>Liter</option>
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridZip">
-                  <Form.Label>Zip</Form.Label>
-                  <Form.Control />
-                </Form.Group>
               </Row>
 
               <div className='text-center'>
-                <Button variant="primary" type="submit " className='w-50'>
+                <Button
+                  variant="primary"
+                  type="submit "
+                  className='w-50'
+                  onClick={SubmitForm}
+                >
                   Submit
                 </Button>
-
-
               </div>
-
-
 
             </Form>
 
@@ -72,86 +129,49 @@ function App() {
 
 
           <div className='col-md-6'>
-            <h3 className='border text-center'>Add Items</h3>
+            <h3 className='border text-center'>Get Items</h3>
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>id</th>
-                  <th>Email</th>
-                  <th>password</th>
-                  <th>Addresss</th>
-                  <th>City</th>
-                  <th>state</th>
-                  <th>zip</th>
+                  <th>Id</th>
+                  <th>Item Name</th>
+                  <th>Description</th>
+                  <th>Purchase Price</th>
+                  <th>Selling Price</th>
+                  <th>Quantity</th>
+                  <th>Unit</th>
+                  <th>Action</th>
+
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>roshani@gmail.com</td>
-                  <td>765</td>
-                  <td>Karad</td>
-                  <td>Karad</td>
-                  <td>Maharashtra</td>
-                  <td>415110</td>
+                  <td>Pen</td>
+                  <td>Jel Pen</td>
+                  <td>10</td>
+                  <td>20</td>
+                  <td>10</td>
+                  <td>Box</td>
+                  <td className='d-flex'>
+                    <button className='btn btn-success' d-flex>Edit</button>
+                    <button className='btn btn-danger mx-2'>Delet</button>
+                  </td>
                 </tr>
-                 <tr>
-                  <td>1</td>
-                  <td>roshani@gmail.com</td>
-                  <td>765</td>
-                  <td>Karad</td>
-                  <td>Karad</td>
-                  <td>Maharashtra</td>
-                  <td>415110</td>
-                </tr>
-                 <tr>
-                  <td>1</td>
-                  <td>roshani@gmail.com</td>
-                  <td>765</td>
-                  <td>Karad</td>
-                  <td>Karad</td>
-                  <td>Maharashtra</td>
-                  <td>415110</td>
-                </tr>
-                 <tr>
-                  <td>1</td>
-                  <td>roshani@gmail.com</td>
-                  <td>765</td>
-                  <td>Karad</td>
-                  <td>Karad</td>
-                  <td>Maharashtra</td>
-                  <td>415110</td>
-                </tr>
-                 <tr>
-                  <td>1</td>
-                  <td>roshani@gmail.com</td>
-                  <td>765</td>
-                  <td>Karad</td>
-                  <td>Karad</td>
-                  <td>Maharashtra</td>
-                  <td>415110</td>
-                </tr>
-                 <tr>
-                  <td>1</td>
-                  <td>roshani@gmail.com</td>
-                  <td>765</td>
-                  <td>Karad</td>
-                  <td>Karad</td>
-                  <td>Maharashtra</td>
-                  <td>415110</td>
-                </tr>
-                 <tr>
-                  <td>1</td>
-                  <td>roshani@gmail.com</td>
-                  <td>765</td>
-                  <td>Karad</td>
-                  <td>Karad</td>
-                  <td>Maharashtra</td>
-                  <td>415110</td>
-                </tr>
-                
-                
 
+                <tr>
+                  <td>2</td>
+                  <td>Book</td>
+                  <td>Note Book</td>
+                  <td>10</td>
+                  <td>20</td>
+                  <td>10</td>
+                  <td>Box</td>
+                  <td className='d-flex'>
+                    <button className='btn btn-success' d-flex>Edit</button>
+                    <button className='btn btn-danger mx-2'>Delet</button>
+                  </td>
+                </tr>
 
 
               </tbody>
