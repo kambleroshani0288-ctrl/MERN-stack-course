@@ -59,32 +59,81 @@ const itemsSchema = new mongoose.Schema({
 
 const Items = new mongoose.model("Items", itemsSchema) // Table Name / Collection Name - Items
 
-// //API 1 - Create Item     
-app.post( "" )
+//API 1 - Create Item     
+app.post("/api/create-item", async (req, res) => {
+
+    try {
+
+        const { name, description, sellingprice } = req.body
 
 
-// //API 2 - update/Edit Item     
-app.put( "" )
+        const saveItem = new Items(
+            {
+                name,
+                description,
+                sellingprice
+            }
+        )
+
+        await saveItem.save()
+
+        res.status(201).json({ message: "Item Created ", data: saveItem })
 
 
+    } catch (error) {
+        console.log(error)
+    }
+})
 
-// //API 1 - Deleat Item       
-app.delete( "" )
+
+//API 2 - update/Edit Item     
+app.put("/api/update-item", (req, res) => {
+
+    try {
 
 
+    } catch (error) {
+        console.log(error)
+    }
+})
 
-// //API 1 - Get All Item   
-app.get( "" )
+
+//API 3 - Deleat Item       
+app.delete("/api/delete-item", (req, res) => {
+
+    try {
+
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
+//API 4 - Get All Item   
+app.get("/api/get-all-item", async (req, res) => {
+
+    try {
+
+        const items = await Items.find()
+
+        res.status(200).json({ message: " Get All Item List ", data: Items })
+
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 
 
 
 
 //Helth ApI
 
-app.get("/helth", (req, res) => {
-    res.status(200).json({ message: "Server is Runing" })
+app.get("/health", (req, res) => {
+    res.status(200).json({ message: "Server is Running" })
 })
-
 
 //server Started
 
