@@ -38,9 +38,11 @@ console.log("Hello Node js Project Started")
 
 const express = require("express")  //Node js framework
 const app = express()  //app - variable - store express function 
-const mongoose = require("mongoose") // Liabrary - connect mongodb Database
+const mongoose = require("mongoose") // Library - connect mongodb Database
+const cors = require("cors") // Library - solve cors error
 
 app.use(express.json())  //convert all data into json format
+app.use(cors())
 
 // DB Connection
 
@@ -53,7 +55,10 @@ mongoose.connect("mongodb://localhost:27017/item-database").then(() => console.l
 const itemsSchema = new mongoose.Schema({
     name: String,
     description: String,
-    sellingprice: Number
+    sellingprice: Number,
+    purchasePrice: Number,
+    quantity: Number,
+    unit: String
 })
 
 
@@ -64,14 +69,17 @@ app.post("/api/create-item", async (req, res) => {
 
     try {
 
-        const { name, description, sellingprice } = req.body
+        const { name, description, sellingprice, purchasePrice, quantity, unit } = req.body
 
 
         const saveItem = new Items(
             {
                 name,
                 description,
-                sellingprice
+                sellingprice,
+                purchasePrice,
+                quantity,
+                unit
             }
         )
 
@@ -117,7 +125,7 @@ app.get("/api/get-all-item", async (req, res) => {
 
         const items = await Items.find()
 
-        res.status(200).json({ message: " Get All Item List ", data: Items })
+        res.status(200).json({ message: " Get All Item List ", data: items })
 
 
     } catch (error) {
