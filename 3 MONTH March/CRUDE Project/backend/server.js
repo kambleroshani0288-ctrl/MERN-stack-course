@@ -55,43 +55,47 @@ mongoose.connect("mongodb://localhost:27017/item-database").then(() => console.l
 const itemsSchema = new mongoose.Schema({
     name: String,
     description: String,
-    sellingprice: Number,
     purchasePrice: Number,
+    sellingPrice: Number,
     quantity: Number,
     unit: String
 })
 
 
+
 const Items = new mongoose.model("Items", itemsSchema) // Table Name / Collection Name - Items
 
-//API 1 - Create Item     
+//API 1 - Create Item    
+
 app.post("/api/create-item", async (req, res) => {
 
     try {
 
-        const { name, description, sellingprice, purchasePrice, quantity, unit } = req.body
+        const { name, description, sellingPrice, purchasePrice, quantity, unit } = req.body
 
-
-        const saveItem = new Items(
-            {
-                name,
-                description,
-                sellingprice,
-                purchasePrice,
-                quantity,
-                unit
-            }
-        )
+        const saveItem = new Items({
+            name,
+            description,
+            purchasePrice,
+            sellingPrice,
+            quantity,
+            unit
+        })
 
         await saveItem.save()
 
-        res.status(201).json({ message: "Item Created ", data: saveItem })
-
+        res.status(201).json({
+            message: "Item Created",
+            data: saveItem
+        })
 
     } catch (error) {
         console.log(error)
+        res.status(201).json({ message: "Server Error" })
     }
 })
+
+
 
 
 //API 2 - update/Edit Item     
@@ -106,16 +110,23 @@ app.put("/api/update-item", (req, res) => {
 })
 
 
-//API 3 - Deleat Item       
-app.delete("/api/delete-item", (req, res) => {
+//API 3 - Delete Item       
+
+app.delete("/api/delete-item/:id", async (req, res) => {
 
     try {
 
+        const { id } = req.params;
+
+        const deleteItem = await Items.findByIdAndDelete(id);
+
+        res.status(200).json({ message: "Item Deleted", deleteItem: deleteItem });
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
+
     }
-})
+});
 
 
 //API 4 - Get All Item   

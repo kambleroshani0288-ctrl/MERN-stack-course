@@ -68,3 +68,24 @@ body {
 
 }
 
+.Footer {
+    background-color: #1e40af;
+
+}
+
+.contact-form {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .message-section {
+    height: 50%;
+    width: 50%;
+}
+
+.contact-us .contact-form .name-section {
+    align-items: flex-start;
+}

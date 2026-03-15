@@ -5,44 +5,77 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import { ToastContainer, toast } from 'react-toastify';
-
-
+import axios from 'axios';
 import "./style.css"
-import { useEffect, useState } from 'react';
+import { useEffect, } from 'react';
+import { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
 
 function App() {
 
+  const [itemName, setItemName] = useState();  //1 Use State Hook
+  const [description, setDescription] = useState();
+  const [purchaseprice, setPurchasePrice] = useState();
+  const [sellingPrice, setSellingPrice] = useState();
+  const [quantity, setQuantity] = useState();
+  const [unit, setUnit] = useState();
+  const [itemData, setData] = useState();
 
 
-  const [itemName, setItemName] = useState() //1 Use State Hook
-  const [itemData, setData] = useState()
 
-  console.log(itemName, "Enter Item Name")
-
-  const handleOnChange = (event) => {
-
-    setItemName(event.target.value)
+  async function SubmitForm(e) {
+    try {
+      e.preventDefault();
 
 
-    console.log("Typing on Input field")
+      const data = {
+        itemName,
+        description,
+        purchaseprice,
+        sellingPrice,
+        quantity,
+        unit,
+      };
+
+
+      console.log(data, "form submitted");
+
+
+      const apiResponse = await axios.post("http://localhost:9090/api/create-item",
+        {
+          name: itemName,
+          description: description,
+          purchasePrice: purchaseprice,
+          sellingPrice: sellingPrice,
+          quantity: quantity,
+          unit: unit,
+        }
+
+
+      ).then(console.log("yes"))
+
+        .catch((error) => console.log(error))
+      console.log(apiResponse);
+
+      getAllItemsData();
+
+
+      toast.success("Form submitted", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
+    } catch (error) {
+      console.log(error);
+    }
+
   };
-
-  function SubmitForm(e) {
-    e.preventDefault();
-    console.log("form submitted");
-
-    toast.success("Form submitted", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-
-  }
 
 
   const getAllItemsData = async () => {
@@ -65,7 +98,43 @@ function App() {
 
   console.log(
     itemData, "itemData ==>"
-  )
+  );
+
+  const [show, setShow] = useState(false);
+  const [id, setID] = useState()
+
+  const handleClose = () => setShow(false);
+
+  const openDeleteModel = (_id) => {
+    try {
+      setShow(true);
+      setID(_id)
+
+      console.log(_id, "_id==>")
+      console.log("call delete function")
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+  const handleDelete = async () => {
+    try {
+      console.log(id, "id==>")
+
+      const apiResponse = await axios.delete(`http://localhost:9090/api/delete-item/${id}`)
+
+      setShow(false)
+
+      console.log(apiResponse)
+      getAllItemsData();
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
 
   return (
     <>
@@ -93,14 +162,21 @@ function App() {
 
                 <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label>Item Name</Form.Label>
-                  <Form.Control type="text" placeholder="Enter Item Name" onChange={() => handleOnChange(event)}
+                  <Form.Control type="text"
+                    placeholder="Enter Item Name"
+                    onChange={(event) => setItemName(event.target.value)}
+                    value={itemName}
                   />
                 </Form.Group>
 
 
                 <Form.Group as={Col} controlId="formGridZip">
-                  <Form.Label>Discription</Form.Label>
-                  <Form.Control type='number' placeholder=" Enter Description" />
+                  <Form.Label>Description</Form.Label>
+                  <Form.Control type='Text'
+                    placeholder=" Enter Description"
+                    onChange={(event) => setDescription(event.target.value)}
+                    value={description}
+                  />
                 </Form.Group>
 
               </Row>
@@ -108,24 +184,33 @@ function App() {
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridPassword">
                   <Form.Label>Purchase Price</Form.Label>
-                  <Form.Control type="Number" placeholder="Enter Purchase Price" />
+                  <Form.Control type="Number" placeholder="Enter Purchase Price"
+                    onChange={(event) => setPurchasePrice(event.target.value)}
+                    value={purchaseprice}
+                  />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridAddress1">
                   <Form.Label>Selling  Prices</Form.Label>
-                  <Form.Control type='number' placeholder=" Selling Price" />
+                  <Form.Control type='number' placeholder=" Enter Selling Price"
+                    onChange={(event) => setSellingPrice(event.target.value)}
+                    value={sellingPrice}
+                  />
                 </Form.Group>
               </Row>
 
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridCity">
                   <Form.Label>Quantity</Form.Label>
-                  <Form.Control type='number' placeholder=" Enter Quantity" />
+                  <Form.Control type='number' placeholder=" Enter Quantity"
+                    onChange={(event) => setQuantity(event.target.value)} />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridState">
                   <Form.Label>Unity</Form.Label>
-                  <Form.Select defaultValue="Choose Unit">
+                  <Form.Select defaultValue="Choose Unit"
+                    onChange={(event) => setUnit(event.target.value)}
+                  >
                     <option>Choose Unity</option>
                     <option>Pice</option>
                     <option>Box</option>
@@ -174,22 +259,27 @@ function App() {
                   itemData.map((each, index) => {
                     return (
                       <tr>
+
                         <td>{index + 1}</td>
                         <td>{each.name}</td>
-                        <td> {each.description}</td>
+                        <td>{each.description}</td>
                         <td>{each.purchasePrice}</td>
                         <td>{each.sellingPrice}</td>
                         <td>{each.quantity}</td>
                         <td>{each.unit}</td>
                         <td className='d-flex'>
                           <button className='btn btn-success' d-flex>Edit</button>
-                          <button className='btn btn-danger mx-2'>
-                            {""}
-                            Delet</button>
+                          <button className='btn btn-danger mx-2'
+
+                            onClick={() => openDeleteModel(each._id)}
+
+                          >
+                            Delet
+                          </button>
                         </td>
                       </tr>
 
-                    )
+                    );
                   })}
 
 
@@ -200,6 +290,21 @@ function App() {
 
         </div>
       </div>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Delete confirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure wan to delete this Item</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleDelete}>
+            Yes
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            No
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
     </>
   )
