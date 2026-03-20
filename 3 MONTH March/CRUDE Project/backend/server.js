@@ -33,116 +33,48 @@
 
 
 
-console.log("Hello Node js Project Started")
+
 
 
 const express = require("express")  //Node js framework
-const app = express()  //app - variable - store express function 
-const mongoose = require("mongoose") // Library - connect mongodb Database
-const cors = require("cors") // Library - solve cors error
+const app = express()  //app - variable - store express function     
 
-app.use(express.json())  //convert all data into json format
+const cors = require("cors") //liberary - solve cors error
+
+const { connectDB } = require("./config/db") //Inform function from another file
+
+const { addItem, editItem, deleteItem, getAllItems } = require("./controllers/itemsControllers")
+
+app.use(express.json())  //convert all data into json formate
 app.use(cors())
 
 // DB Connection
 
-mongoose.connect("mongodb://localhost:27017/item-database").then(() => console.log("Mongo DB Connected")).catch((error) => console.log(error))
 
-// //Schema - Model - Data base table structure
-// //values store database - structure
-
-
-const itemsSchema = new mongoose.Schema({
-    name: String,
-    description: String,
-    purchasePrice: Number,
-    sellingPrice: Number,
-    quantity: Number,
-    unit: String
-})
+connectDB()
 
 
 
-const Items = new mongoose.model("Items", itemsSchema) // Table Name / Collection Name - Items
+
 
 //API 1 - Create Item    
 
-app.post("/api/create-item", async (req, res) => {
-
-    try {
-
-        const { name, description, sellingPrice, purchasePrice, quantity, unit } = req.body
-
-        const saveItem = new Items({
-            name,
-            description,
-            purchasePrice,
-            sellingPrice,
-            quantity,
-            unit
-        })
-
-        await saveItem.save()
-
-        res.status(201).json({
-            message: "Item Created",
-            data: saveItem
-        })
-
-    } catch (error) {
-        console.log(error)
-        res.status(201).json({ message: "Server Error" })
-    }
-})
+app.post("/api/create-item", addItem)
 
 
 
 
 //API 2 - update/Edit Item     
-app.put("/api/update-item", (req, res) => {
-
-    try {
-
-
-    } catch (error) {
-        console.log(error)
-    }
-})
+app.put("/api/update-item", editItem)
 
 
 //API 3 - Delete Item       
 
-app.delete("/api/delete-item/:id", async (req, res) => {
-
-    try {
-
-        const { id } = req.params;
-
-        const deleteItem = await Items.findByIdAndDelete(id);
-
-        res.status(200).json({ message: "Item Deleted", deleteItem: deleteItem });
-
-    } catch (error) {
-        console.log(error);
-
-    }
-});
+app.delete("/api/delete-item/:id", deleteItem)
 
 
 //API 4 - Get All Item   
-app.get("/api/get-all-item", async (req, res) => {
-
-    try {
-
-        const items = await Items.find()
-
-        res.status(200).json({ message: " Get All Item List ", data: items })
-
-
-    } catch (error) {
-        console.log(error)
-    }
-})
+app.get("/api/get-all-item", getAllItems)
 
 
 
@@ -155,6 +87,7 @@ app.get("/health", (req, res) => {
 })
 
 //server Started
+
 
 const PORT = 9090
 
