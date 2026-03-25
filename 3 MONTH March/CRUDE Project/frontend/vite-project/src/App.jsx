@@ -7,13 +7,13 @@ import HomePage from './screens/Homepage'
 
 const App = () => {
 
-  const name = "HOC"
+  // const name = "HOC"
 
 
   return (
     <div>
-
-      <h2>{name}</h2>
+{/* 
+      <h2>{name}</h2> */}
       <HomePage />
     </div>
   )
