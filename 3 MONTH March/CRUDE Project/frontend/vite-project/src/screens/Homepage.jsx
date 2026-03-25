@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 //Importing col  component from react-Bootstrap for column layout inside from rows
 import Col from 'react-bootstrap/Col';
 
- //Importing form  component from react-Bootstrap to build the input form
+//Importing form  component from react-Bootstrap to build the input form
 import Form from 'react-bootstrap/Form';
 
 //Importing Row  component from react-Bootstrap to create horizontal rows inside form
