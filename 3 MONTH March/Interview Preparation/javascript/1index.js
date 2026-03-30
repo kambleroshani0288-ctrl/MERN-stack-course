@@ -51,3 +51,4 @@ const studentDetails = {
 }
 console.log(studentDetails, "= studentDetails full object")
 console.log(studentDetails.name, " => stuDentDetails name only")
+
